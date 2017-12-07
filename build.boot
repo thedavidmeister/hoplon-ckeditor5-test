@@ -19,11 +19,7 @@
  '[thedavidmeister.boot-github-pages :refer [github-pages]])
 
 (def compiler-options
- {:foreign-libs
-  [
-   ; ckeditor5
-   {:file "lib/ckeditor5/lib/1.0.0-alpha.2/balloon/ckeditor.js"
-    :provides ["ckeditor.lib"]}]})
+ {})
 
 (deftask front-dev
  "Build for local development."
