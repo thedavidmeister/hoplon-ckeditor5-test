@@ -16,30 +16,32 @@
  '[adzerk.boot-cljs :refer [cljs]]
  '[hoplon.boot-hoplon :refer [hoplon prerender]]
  '[tailrecursion.boot-jetty :refer [serve]]
- '[thedavidmeister.boot-github-pages :refer [github-pages]]
+ '[thedavidmeister.boot-github-pages :refer [github-pages]])
 
- (deftask front-dev
-  "Build for local development."
-  []
-  (comp
-   (watch)
-   (speak)
-   (hoplon)
-   (cljs :compiler-options compiler-options)
-   (serve :port 8000)))
+(def compiler-options {})
 
- (deftask build
-  []
-  (comp
-   (hoplon)
-   (cljs
-    :optimizations :advanced
-    :compiler-options compiler-options)))
+(deftask front-dev
+ "Build for local development."
+ []
+ (comp
+  (watch)
+  (speak)
+  (hoplon)
+  (cljs :compiler-options compiler-options)
+  (serve :port 8000)))
 
- (deftask deploy
-  []
-  (comp
-   (build)
-   (target
-    :dir #{"gh-pages"})
-   (github-pages))))
+(deftask build
+ []
+ (comp
+  (hoplon)
+  (cljs
+   :optimizations :advanced
+   :compiler-options compiler-options)))
+
+(deftask deploy
+ []
+ (comp
+  (build)
+  (target
+   :dir #{"gh-pages"})
+  (github-pages)))
