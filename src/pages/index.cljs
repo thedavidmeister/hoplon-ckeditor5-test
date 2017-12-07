@@ -4,13 +4,17 @@
   [javelin.core :as j]
   hoplon.jquery))
 
-(def ready? (j/cell nil))
+(def ready?
+ (j/with-let [c (j/cell nil)]
+  (h/with-interval
+   1000
+   (when (exists? js/BalloonEditor)
+    (reset! c true)))))
 
 (h/html
  (h/head
-  (j/with-let [el (h/script
-                   :src "https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/balloon/ckeditor.js")]
-   (h/with-dom el (reset! ready? true))))
+  (h/script
+   :src "https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/balloon/ckeditor.js"))
 
  (h/body
   (h/div
