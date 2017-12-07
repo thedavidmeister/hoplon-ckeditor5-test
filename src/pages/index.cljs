@@ -13,7 +13,12 @@
    (h/with-dom el (reset! ready? true))))
 
  (h/body
-  (j/with-let [el (h/div "foo edit me!")]
-   (j/cell=
-    (when ready?
-     (js/BalloonEditor.create el))))))
+  (h/div
+   (h/a
+    :href "https://github.com/thedavidmeister/hoplon-ckeditor5-test"
+    :target "_blank"
+    "Github")
+   (j/with-let [el (h/div "foo edit me!")]
+    (j/cell=
+     (when ready?
+      (js/BalloonEditor.create el)))))))
