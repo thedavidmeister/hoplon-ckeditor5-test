@@ -1,6 +1,7 @@
 (set-env!
   :dependencies
   '[
+    ; [cljsjs/jquery "3.2.1-0"]
     [org.clojure/clojure "1.9.0-RC2"]
     [org.clojure/clojurescript "1.9.946"]
     [adzerk/boot-cljs "2.1.4"]
