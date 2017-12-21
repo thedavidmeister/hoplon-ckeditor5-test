@@ -32,6 +32,11 @@
   (cljs :compiler-options compiler-options)
   (serve :port 8000)))
 
+(deftask no-hoplon
+ []
+ (cljs
+  :compiler-options {:output-to "assets/no-hoplon.js"}))
+
 (deftask build
  []
  (comp

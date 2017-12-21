@@ -35937,6 +35937,7 @@ function insertat_insertAt( parentElement, index, nodeToInsert ) {
  * @param {Node} node Node to remove.
  */
 function dom_remove_remove( node ) {
+  console.log(node);
 	const parent = node.parentNode;
 
 	if ( parent ) {
@@ -36435,13 +36436,15 @@ class renderer_Renderer {
 		let i = 0;
 		const nodesToUnbind = new Set();
 
-    console.log(actualDomChildren, expectedDomChildren, actions);
+    console.log(actualDomChildren[0], actualDomChildren[1], expectedDomChildren, actions);
 
 		for ( const action of actions ) {
+      console.log(i);
 			if ( action === 'insert' ) {
 				insertat_insertAt( domElement, i, expectedDomChildren[ i ] );
 				i++;
 			} else if ( action === 'delete' ) {
+        console.log('*', i, actualDomChildren[0], actualDomChildren[1]);
 				nodesToUnbind.add( actualDomChildren[ i ] );
 				dom_remove_remove( actualDomChildren[ i ] );
 			} else { // 'equal'

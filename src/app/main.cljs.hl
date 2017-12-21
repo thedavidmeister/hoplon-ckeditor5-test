@@ -1,7 +1,7 @@
-(ns app.main
- (:require
-  [hoplon.core :as h]
-  [javelin.core :as j]))
+(ns app.main)
+ ; (:require
+ ;  [hoplon.core :as h]
+ ;  [javelin.core :as j]))
 
 (prn "foo")
 
