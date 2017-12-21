@@ -3,9 +3,10 @@
  ;  [hoplon.core :as h]
  ;  [javelin.core :as j]))
 
-(prn "foo")
-
-(js/BalloonEditor.create (.getElementById js/document "mountpoint"))
+(let [el (.createElement js/document "div")
+      body (.-body js/document)]
+ (.appendChild body el)
+ (.create js/BalloonEditor el))
 
 ; (.append
 ;  (.getElementById js/document "mountpoint")

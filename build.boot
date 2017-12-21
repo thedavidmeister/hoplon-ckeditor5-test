@@ -34,8 +34,9 @@
 
 (deftask no-hoplon
  []
- (cljs
-  :compiler-options {:output-to "assets/no-hoplon.js"}))
+ (comp
+  (cljs)
+  (target :dir #{"no-hoplon"})))
 
 (deftask build
  []

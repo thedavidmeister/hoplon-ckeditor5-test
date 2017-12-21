@@ -1,0 +1,1 @@
+{:rename-macros {}, :renames {}, :externs {document {createElement {}, body {appendChild {}}}, BalloonEditor {create {}}}, :use-macros {}, :excludes #{}, :name app.main, :imports nil, :requires nil, :cljs.spec/speced-vars [], :uses nil, :cljs.spec/registry-ref [], :require-macros nil, :doc nil}
