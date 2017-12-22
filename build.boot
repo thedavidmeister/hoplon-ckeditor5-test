@@ -35,6 +35,8 @@
 (deftask no-hoplon
  []
  (comp
+  (watch)
+  (speak)
   (cljs)
   (target :dir #{"no-hoplon"})))
 

@@ -36441,7 +36441,10 @@ class renderer_Renderer {
 		for ( const action of actions ) {
       console.log(i);
 			if ( action === 'insert' ) {
+        console.log(domElement.outerHTML, 'before');
+        console.log(expectedDomChildren[ i ], 'expected before');
 				insertat_insertAt( domElement, i, expectedDomChildren[ i ] );
+        console.log(domElement.outerHTML, 'after');
 				i++;
 			} else if ( action === 'delete' ) {
         console.log('*', i, actualDomChildren[0], actualDomChildren[1]);
